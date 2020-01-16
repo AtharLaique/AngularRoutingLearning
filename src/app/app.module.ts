@@ -13,8 +13,10 @@ import { EditServerComponent } from './servers/edit-server/edit-server.component
 import { ServerComponent } from './servers/server/server.component';
 import { ServersService } from './servers/servers.service';
 
+//Step1:import 
 import { Routes  ,RouterModule} from '@angular/router';
 
+//Step2:Make Array of routes and pass to the function of RouteModule as peremeter 
 const aapRoutes:Routes=
 [
  {path:'' ,component:HomeComponent},
@@ -34,7 +36,7 @@ const aapRoutes:Routes=
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(aapRoutes)
+    RouterModule.forRoot(aapRoutes)//here we are passing our our routes 
   ],
   providers: [ServersService],
   bootstrap: [AppComponent]
