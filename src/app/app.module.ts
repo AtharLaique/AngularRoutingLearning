@@ -20,8 +20,8 @@ import { Routes  ,RouterModule} from '@angular/router';
 const aapRoutes:Routes=
 [
  {path:'' ,component:HomeComponent},
- {path:'user' ,component:UserComponent},
- {path:'server' ,component:ServerComponent} 
+ {path:'user' ,component:UsersComponent},
+ {path:'server' ,component:ServersComponent} 
 ]
 @NgModule({
   declarations: [
