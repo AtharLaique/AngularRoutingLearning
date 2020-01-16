@@ -21,7 +21,7 @@ const aapRoutes:Routes=
 [
  {path:'' ,component:HomeComponent},
  {path:'users' ,component:UsersComponent},
- {path:'user/:id' ,component:UserComponent},
+ {path:'user/:id/:name' ,component:UserComponent},
  {path:'server' ,component:ServersComponent} 
 ]
 @NgModule({
