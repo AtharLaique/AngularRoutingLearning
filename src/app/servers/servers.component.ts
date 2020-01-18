@@ -8,6 +8,8 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent implements OnInit {
+  queryParam:string;
+  fragment:string;
   private servers: {id: number, name: string, status: string}[] = [];
 
   constructor(private serversService: ServersService ,
@@ -16,6 +18,7 @@ export class ServersComponent implements OnInit {
 
   ngOnInit() {
     this.servers = this.serversService.getServers();
+   
   }
 
   loadRelative(){
