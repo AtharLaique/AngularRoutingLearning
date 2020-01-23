@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServersService } from '../servers.service';
-import {ActivatedRoute ,Params} from '@angular/router';
+import {ActivatedRoute ,Params ,Router} from '@angular/router';
 
 
 @Component({
@@ -13,7 +13,7 @@ export class ServerComponent implements OnInit {
   id:number
   server: {id: number, name: string, status: string};
 
-  constructor(private serversService: ServersService,private route:ActivatedRoute) { }
+  constructor(private serversService: ServersService,private route:ActivatedRoute,private router:Router) { }
 
   ngOnInit() {
     //Here we type casting into integer
@@ -26,6 +26,10 @@ export class ServerComponent implements OnInit {
         this.server = this.serversService.getServer(+params['id']);
       }
       )
+  }
+  OnEdit(){
+    console.log("Its called")
+    this.router.navigate(['edit'],{relativeTo:this.route})
   }
 
 }

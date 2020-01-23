@@ -2,7 +2,9 @@
   <div class="col-xs-12 col-sm-4">
     <div class="list-group">
       <a
-        [routerLink]="['/server' , server.id ]"
+        [routerLink]="['/servers' , server.id ]"
+        [queryParams]="{allowEdit:'1'}"
+        fragment="loading"
         class="list-group-item"
         *ngFor="let server of servers">
         {{ server.name }}
@@ -10,10 +12,7 @@
     </div>
   </div>
   <div class="col-xs-12 col-sm-4">
-    <app-edit-server></app-edit-server>
-    <hr>
-    <!-- <app-server></app-server> -->
-  </div>
-  <button (click)="loadRelative()"> Load Relative Path</button>
+    <!--All child component of this component(servers) Will rendere here-->
+   <router-outlet></router-outlet>
 </div>
 
