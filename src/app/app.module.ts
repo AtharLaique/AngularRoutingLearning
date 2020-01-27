@@ -15,6 +15,7 @@ import { ServersService } from './servers/servers.service';
 
 //Step1:import 
 import { Routes  ,RouterModule} from '@angular/router';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 //Step2:Make Array of routes and pass to the function of RouteModule as peremeter 
 const aapRoutes:Routes=
@@ -27,7 +28,8 @@ const aapRoutes:Routes=
   {path: ':id/edit' , component:EditServerComponent},
   {path: ':id' , component:ServerComponent}
  ]},
-
+  {path:'page-not-found',component:PageNotFoundComponent},
+  {path:'**',redirectTo:'page-not-found'}
 ]
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ const aapRoutes:Routes=
     ServersComponent,
     UserComponent,
     EditServerComponent,
-    ServerComponent
+    ServerComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
