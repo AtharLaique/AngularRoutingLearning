@@ -16,7 +16,7 @@ import {AppRoutingModule } from './app-routing-module';
 
 //Import services
 import { AuthService } from './auth.service';
-import {AuthGuard } from './authGuard.service'
+import {AuthGuard } from './authGuard.service';
 
 @NgModule({
   declarations: [

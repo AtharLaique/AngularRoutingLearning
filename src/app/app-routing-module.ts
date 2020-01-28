@@ -10,6 +10,9 @@ import { ServerComponent } from './servers/server/server.component';
 import { ServersService } from './servers/servers.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
+//import AuthGuard services
+import {AuthGuard} from './authGuard.service';
+
 //Step1:import 
 import { Routes  ,RouterModule} from '@angular/router';
 //Step2:Make Array of routes and pass to the function of RouteModule as peremeter 
@@ -19,7 +22,7 @@ const aapRoutes:Routes=
  {path:'users' ,component:UsersComponent, children:[
   {path:':id/:name' ,component:UserComponent},
  ]},
- {path:'servers' ,component:ServersComponent ,children:[
+ {path:'servers' ,canActivate:[AuthGuard],component:ServersComponent ,children:[
   {path: ':id/edit' , component:EditServerComponent},
   {path: ':id' , component:ServerComponent}
  ]},
