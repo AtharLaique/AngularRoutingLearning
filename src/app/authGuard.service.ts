@@ -3,7 +3,9 @@ import {
     CanActivate ,
     ActivatedRouteSnapshot ,
     RouterStateSnapshot ,
-    Router} 
+    Router,
+    CanActivateChild
+} 
 from "@angular/router";
 
 //Step 1: import observable to make canActive sync or async
@@ -14,7 +16,7 @@ import {AuthService} from './auth.service';
 import {Injectable} from '@angular/core'
 //Step 4.1 inject the service
 @Injectable()
-export class AuthGuard implements CanActivate{
+export class AuthGuard implements CanActivate ,CanActivateChild{
     //Step 4.2 inject the service
     constructor(private auth:AuthService,private router:Router){}
 
@@ -40,6 +42,10 @@ export class AuthGuard implements CanActivate{
               }
           )
         return true;
+    }
+     //implementation for child route
+    canActivateChild(route:ActivatedRouteSnapshot , state:RouterStateSnapshot):Observable<boolean>|Promise<boolean>|boolean{
+        return this.canActivate(route, state);
     }
     
 }
