@@ -2,8 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-
-
 //Importing Component
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
