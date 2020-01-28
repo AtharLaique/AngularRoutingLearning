@@ -22,7 +22,12 @@ const aapRoutes:Routes=
  {path:'users' ,component:UsersComponent, children:[
   {path:':id/:name' ,component:UserComponent},
  ]},
- {path:'servers' ,canActivate:[AuthGuard],component:ServersComponent ,children:[
+ {path:'servers' ,
+ //canActivate:[AuthGuard]
+ //Now auth guard only for child routes
+ canActivateChild:[AuthGuard],
+ component:ServersComponent ,
+ children:[
   {path: ':id/edit' , component:EditServerComponent},
   {path: ':id' , component:ServerComponent}
  ]},
